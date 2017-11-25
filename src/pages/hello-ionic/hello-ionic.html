@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hello Ionic</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Welcome to your first Ionic app!</h3>
+
+  <p>
+    Get your location
+    Latitude : {{coords?.latitude}}
+    Longitude : {{coords?.longitude}}
+  </p>
+  <p>
+
+  <ion-list>
+    <ion-item>
+      <ion-range [(ngModel)]="radius" color="blue" pin="true" (ionChange)="getVideos()"></ion-range>
+    </ion-item>
+  </ion-list>
+
+    Vidéos:
+    <ion-list>
+      <ion-item *ngFor="let video of videos">
+        {{video.title}}
+      </ion-item>
+    </ion-list>
+  </p>
+
+  <p>
+    Follow along on the tutorial section of the Ionic docs!
+  </p>
+
+  <p>
+    <button ion-button color="primary" menuToggle>Toggle Menu</button>
+  </p>
+
+</ion-content>
